@@ -1,0 +1,297 @@
+1. Find the frequency of each element in the array
+java
+Copy code
+import java.util.HashMap;
+import java.util.Map;
+
+public class FrequencyOfElements {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 4, 4, 4, 5};
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        
+        for (int num : array) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        
+        System.out.println(frequencyMap);
+    }
+}
+2. Print the duplicate elements of an array
+java
+Copy code
+import java.util.HashSet;
+import java.util.Set;
+
+public class PrintDuplicates {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 4, 4, 4, 5};
+        Set<Integer> duplicates = new HashSet<>();
+        Set<Integer> seen = new HashSet<>();
+        
+        for (int num : array) {
+            if (!seen.add(num)) {
+                duplicates.add(num);
+            }
+        }
+        
+        System.out.println(duplicates);
+    }
+}
+3. Print the elements of an array in reverse order
+java
+Copy code
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + " ");
+        }
+    }
+}
+4. Print the largest element in an array
+java
+Copy code
+public class LargestElement {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int max = array[0];
+        
+        for (int num : array) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        
+        System.out.println("Largest element: " + max);
+    }
+}
+5. Print the smallest element in an array
+java
+Copy code
+public class SmallestElement {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int min = array[0];
+        
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        
+        System.out.println("Smallest element: " + min);
+    }
+}
+6. Print the sum of all the items of the array
+java
+Copy code
+public class SumOfArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int sum = 0;
+        
+        for (int num : array) {
+            sum += num;
+        }
+        
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+7. Sort the elements of an array in ascending order
+java
+Copy code
+import java.util.Arrays;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] array = {3, 1, 4, 5, 2};
+        Arrays.sort(array);
+        
+        System.out.println(Arrays.toString(array));
+    }
+}
+8. Find the second largest number in an array
+java
+Copy code
+public class SecondLargestElement {
+    public static void main(String[] args) {
+        int[] array = {3, 1, 4, 5, 2};
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        
+        for (int num : array) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
+        }
+        
+        System.out.println("Second largest element: " + secondLargest);
+    }
+}
+9. Find the second smallest number in an array
+java
+Copy code
+public class SecondSmallestElement {
+    public static void main(String[] args) {
+        int[] array = {3, 1, 4, 5, 2};
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+        
+        for (int num : array) {
+            if (num < smallest) {
+                secondSmallest = smallest;
+                smallest = num;
+            } else if (num < secondSmallest && num != smallest) {
+                secondSmallest = num;
+            }
+        }
+        
+        System.out.println("Second smallest element: " + secondSmallest);
+    }
+}
+10. Print odd and even numbers from an array
+java
+Copy code
+public class OddEvenNumbers {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        
+        System.out.println("Even numbers:");
+        for (int num : array) {
+            if (num % 2 == 0) {
+                System.out.print(num + " ");
+            }
+        }
+        
+        System.out.println("\nOdd numbers:");
+        for (int num : array) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
+11. Remove all the white spaces in a string
+java
+Copy code
+public class RemoveWhiteSpaces {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String result = str.replaceAll("\\s", "");
+        
+        System.out.println(result);
+    }
+}
+12. Write a code in Java to prove that String objects are immutable
+java
+Copy code
+public class StringImmutability {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String str2 = str.concat(" World");
+        
+        System.out.println("Original String: " + str); // Outputs "Hello"
+        System.out.println("Modified String: " + str2); // Outputs "Hello World"
+    }
+}
+13. Program to count the number of words in a string
+java
+Copy code
+public class WordCount {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String[] words = str.trim().split("\\s+");
+        
+        System.out.println("Number of words: " + words.length);
+    }
+}
+14. Program to check whether a string is a palindrome
+java
+Copy code
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        String str = "racecar";
+        boolean isPalindrome = true;
+        
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        
+        if (isPalindrome) {
+            System.out.println(str + " is a palindrome");
+        } else {
+            System.out.println(str + " is not a palindrome");
+        }
+    }
+}
+15. Reverse a string
+java
+Copy code
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String reversed = new StringBuilder(str).reverse().toString();
+        
+        System.out.println(reversed);
+    }
+}
+16. Remove leading zeros
+java
+Copy code
+public class RemoveLeadingZeros {
+    public static void main(String[] args) {
+        String str = "00012345";
+        String result = str.replaceFirst("^0+(?!$)", "");
+        
+        System.out.println(result);
+    }
+}
+17. Print the first letter of each word in a string
+java
+Copy code
+public class FirstLetterOfEachWord {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String[] words = str.split("\\s+");
+        
+        for (String word : words) {
+            System.out.print(word.charAt(0) + " ");
+        }
+    }
+}
+18. Given a string s, find the length of the longest substring without repeating characters
+java
+Copy code
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeating {
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        int maxLength = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            Set<Character> set = new HashSet<>();
+            for (int j = i; j < s.length(); j++) {
+                if (set.contains(s.charAt(j))) {
+                    break;
+                }
+                set.add(s.charAt(j));
+            }
+            maxLength = Math.max(maxLength, set.size());
+        }
+        
+        System.out.println("Length of longest substring without repeating characters: " + maxLength);
+    }
+}
+
+
+
+
