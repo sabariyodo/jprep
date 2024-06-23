@@ -1,0 +1,22 @@
+1. Find the frequency of each element in the array
+2. Print the duplicate elements of an array
+3. Print the elements of an array in reverse order
+4. Print the largest element in an array
+5. Print the smallest element in an array
+6. Print the sum of all the items of the array
+7. Sort the elements of an array in ascending order
+8. Find the second largest number in an array
+9. Find the second smallest number in an array
+10. Print odd and even numbers from an array
+11. Remove all the white spaces in a string
+12. Write a code in Java to prove that String objects are immutable
+13. Program to count the number of words in a string
+14. Program to check whether a string is a palindrome
+15. Reverse a string
+16. Remove leading zeros
+17. Print the first letter of each word in a string
+18. Given a string s, find the length of the longest substring without repeating characters
+19. Print below pattern with single loop
+*
+**
+***
