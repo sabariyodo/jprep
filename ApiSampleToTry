@@ -1,0 +1,264 @@
+Base URL: https://jsonplaceholder.typicode.com
+Endpoints:
+GET /posts - Fetch all posts
+GET /posts/{id} - Fetch a single post by ID
+POST /posts - Create a new post
+PUT /posts/{id} - Update a post by ID
+DELETE /posts/{id} - Delete a post by ID
+
+
+
+ReqRes API
+
+Base URL: https://reqres.in
+Endpoints:
+GET /api/users - Fetch users
+GET /api/users/{id} - Fetch a single user by ID
+POST /api/users - Create a new user
+PUT /api/users/{id} - Update a user by ID
+DELETE /api/users/{id} - Delete a user by ID
+
+
+
+
+JSONPlaceholder API Specification Document
+Base URL
+arduino
+Copy code
+https://jsonplaceholder.typicode.com
+Endpoints
+1. Get All Posts
+Endpoint: /posts
+Method: GET
+Description: Fetch all posts.
+Request:
+Headers:
+Content-Type: application/json
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit...etc"
+    },
+    ...
+]
+2. Get Post by ID
+Endpoint: /posts/{id}
+Method: GET
+Description: Fetch a single post by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the post to fetch.
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit...etc"
+}
+3. Create New Post
+Endpoint: /posts
+Method: POST
+Description: Create a new post.
+Request:
+Headers:
+Content-Type: application/json
+Body:
+json
+Copy code
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1
+}
+Response:
+Status Code: 201
+Body:
+json
+Copy code
+{
+    "id": 101,
+    "title": "foo",
+    "body": "bar",
+    "userId": 1
+}
+4. Update Post
+Endpoint: /posts/{id}
+Method: PUT
+Description: Update a post by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the post to update.
+Body:
+json
+Copy code
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1
+}
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+{
+    "id": 1,
+    "title": "foo",
+    "body": "bar",
+    "userId": 1
+}
+5. Delete Post
+Endpoint: /posts/{id}
+Method: DELETE
+Description: Delete a post by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the post to delete.
+Response:
+Status Code: 200
+ReqRes API Specification Document
+Base URL
+arduino
+Copy code
+https://reqres.in
+Endpoints
+1. Get All Users
+Endpoint: /api/users
+Method: GET
+Description: Fetch all users.
+Request:
+Headers:
+Content-Type: application/json
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 1,
+            "email": "george.bluth@reqres.in",
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        ...
+    ],
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+2. Get User by ID
+Endpoint: /api/users/{id}
+Method: GET
+Description: Fetch a single user by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the user to fetch.
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+3. Create New User
+Endpoint: /api/users
+Method: POST
+Description: Create a new user.
+Request:
+Headers:
+Content-Type: application/json
+Body:
+json
+Copy code
+{
+    "name": "morpheus",
+    "job": "leader"
+}
+Response:
+Status Code: 201
+Body:
+json
+Copy code
+{
+    "name": "morpheus",
+    "job": "leader",
+    "id": "123",
+    "createdAt": "2023-06-23T15:14:18.800Z"
+}
+4. Update User
+Endpoint: /api/users/{id}
+Method: PUT
+Description: Update a user by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the user to update.
+Body:
+json
+Copy code
+{
+    "name": "morpheus",
+    "job": "zion resident"
+}
+Response:
+Status Code: 200
+Body:
+json
+Copy code
+{
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2023-06-23T15:14:18.800Z"
+}
+5. Delete User
+Endpoint: /api/users/{id}
+Method: DELETE
+Description: Delete a user by ID.
+Request:
+Headers:
+Content-Type: application/json
+Path Variables:
+id: Integer (required) - The ID of the user to delete.
+Response:
+Status Code: 204
+Example Code Snippets
+Setting Up Rest Assured
